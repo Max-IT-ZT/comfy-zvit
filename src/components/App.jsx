@@ -29,15 +29,15 @@ const App = () => {
     let devicesMessage = '';
     if (isAnyDeviceSpecified) {
       devicesMessage = `
-      Смарт ${smartphonesCount || '0'}
-      Ноут ${laptopsCount || '0'}
-      ТВ ${tvsCount || '0'}`;
+    Смарт ${smartphonesCount || '0'}
+    Ноут ${laptopsCount || '0'}
+    ТВ ${tvsCount || '0'}`;
     }
     const message = `Житомир
-      ІТ ${itPlan}/${itFact} (${itDeviation.toFixed(1)}%)
-      Часта: ${itShare}%
-      ХС ${happyPlan}/${happyFact} (${happyDeviation.toFixed(1)}%)
-      Частка: ${happyShare}%${devicesMessage}`;
+    ІТ ${itPlan}/${itFact} (${itDeviation.toFixed(1)}%)
+    Часта: ${itShare}%
+    ХС ${happyPlan}/${happyFact} (${happyDeviation.toFixed(1)}%)
+    Частка: ${happyShare}%${devicesMessage}`;
     alert(message);
   };
 
@@ -45,7 +45,7 @@ const App = () => {
     <div className="app-container">
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={itSum}
@@ -56,7 +56,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={itShare}
@@ -67,7 +67,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={happySum}
@@ -78,7 +78,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={happyShare}
@@ -89,7 +89,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={smartphones}
@@ -100,7 +100,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={laptops}
@@ -111,7 +111,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={tvs}
