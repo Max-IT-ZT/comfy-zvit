@@ -1,0 +1,57 @@
+.transactionHistory {
+  width: 700px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 10px 10px 72px -3px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+}
+
+.transactionTable {
+  height: 50px;
+  background-color: #7cbde8;
+  color: #fff;
+  text-align: left;
+}
+
+.transactionName {
+  background-color: #7cbde8;
+  color: #fff;
+  font-weight: bold;
+}
+
+.transactionTable th {
+  padding: 20px 36px;
+  text-align: center;
+}
+.transactionTable th:first-child {
+  border-top-left-radius: 20px;
+}
+.transactionTable th:last-child {
+  border-top-right-radius: 20px;
+}
+.transactionList {
+  width: 100%;
+}
+
+.transactionItem:nth-child(odd) {
+  background-color: #fff; /* світлий ряд */
+}
+
+.transactionItem:nth-child(even) {
+  background-color: #ededed; /* темний ряд */
+}
+
+.transactionItem:hover {
+  background-color: #95a5a6; /* колір при наведенні */
+}
+
+.typeItem,
+.amountItem,
+.currencyItem {
+  text-align: center;
+  padding: 20px 36px;
+  color: #0000008c;
+  font-size: 18px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
