@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/comfy-zvit/static/css/main.3e7c9c99.css",
+    "main.js": "/comfy-zvit/static/js/main.c3c07266.js",
+    "index.html": "/comfy-zvit/index.html",
+    "main.3e7c9c99.css.map": "/comfy-zvit/static/css/main.3e7c9c99.css.map",
+    "main.c3c07266.js.map": "/comfy-zvit/static/js/main.c3c07266.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e7c9c99.css",
+    "static/js/main.c3c07266.js"
+  ]
+}
