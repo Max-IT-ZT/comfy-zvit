@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/comfy-zvit/static/css/main.e731c30c.css",
-    "main.js": "/comfy-zvit/static/js/main.5aaf9b42.js",
+    "main.js": "/comfy-zvit/static/js/main.eccd437c.js",
     "index.html": "/comfy-zvit/index.html",
     "main.e731c30c.css.map": "/comfy-zvit/static/css/main.e731c30c.css.map",
-    "main.5aaf9b42.js.map": "/comfy-zvit/static/js/main.5aaf9b42.js.map"
+    "main.eccd437c.js.map": "/comfy-zvit/static/js/main.eccd437c.js.map"
   },
   "entrypoints": [
     "static/css/main.e731c30c.css",
-    "static/js/main.5aaf9b42.js"
+    "static/js/main.eccd437c.js"
   ]
 }
