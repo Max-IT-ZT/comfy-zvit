@@ -56,7 +56,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="tel"
+          type="text"
           className="input-field"
           placeholder=" "
           value={itShare}
@@ -78,7 +78,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="tel"
+          type="text"
           className="input-field"
           placeholder=" "
           value={happyShare}
