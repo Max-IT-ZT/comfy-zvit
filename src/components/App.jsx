@@ -99,7 +99,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={happySum}
@@ -121,7 +121,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={smartphones}
@@ -132,7 +132,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={laptops}
@@ -143,7 +143,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="text"
+          type="tel"
           className="input-field"
           placeholder=" "
           value={tvs}
