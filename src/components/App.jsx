@@ -1,5 +1,4 @@
-// src/components/App.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import itPlanData from './ItPlanData';
 import hsPlanData from './HsPlanData';
 import getCurrentDay from './Utils';
@@ -13,8 +12,21 @@ const App = () => {
   const [smartphones, setSmartphones] = useState('');
   const [laptops, setLaptops] = useState('');
   const [tvs, setTvs] = useState('');
+  const [itSalaries, setItSalaries] = useState(Array(4).fill(0));
 
-  const handleSubmit = () => {
+  useEffect(() => {
+    const itSumValue = parseFloat(itSum);
+    if (!isNaN(itSumValue)) {
+      const itSalariesCalculation = Array(4)
+        .fill(0)
+        .map((_, index) => {
+          return (itSumValue * (6.2 / 100)) / (index + 1);
+        });
+      setItSalaries(itSalariesCalculation);
+    }
+  }, [itSum]);
+
+  const generateMessage = () => {
     const currentDay = getCurrentDay();
     const itFact = parseInt(itSum, 10);
     const itPlan = itPlanData[currentDay - 1].plan;
@@ -29,20 +41,40 @@ const App = () => {
     let devicesMessage = '';
     if (isAnyDeviceSpecified) {
       devicesMessage = `
-    Смарт ${smartphonesCount || '0'}
-    Ноут ${laptopsCount || '0'}
-    ТВ ${tvsCount || '0'}`;
+        Смарт ${smartphonesCount || '0'}
+        Ноут ${laptopsCount || '0'}
+        ТВ ${tvsCount || '0'}`;
     }
-    const message = `Житомир
-    ІТ ${itPlan}/${itFact} (${itDeviation.toFixed(1)}%)
-    Часта: ${itShare}%
-    ХС ${happyPlan}/${happyFact} (${happyDeviation.toFixed(1)}%)
-    Частка: ${happyShare}%${devicesMessage}`;
+
+    const itSalariesMessage = itSalaries
+      .map(
+        (salary, index) => `${index + 1}-ІТ Зарплата: ${salary.toFixed()} грн.`
+      )
+      .join('\n');
+
+    return `Житомир
+      ІТ ${itPlan}/${itFact} (${itDeviation.toFixed(1)}%)
+      Часта: ${itShare}%
+      ХС ${happyPlan}/${happyFact} (${happyDeviation.toFixed(1)}%)
+      Частка: ${happyShare}%${devicesMessage}\n${itSalariesMessage}`;
+  };
+
+  const handleSubmit = () => {
+    const message = generateMessage();
     alert(message);
   };
 
   return (
     <div className="app-container">
+      <div className="logo">Заробітна плата</div>
+      <div className="salary-windows">
+        {itSalaries.map((salary, index) => (
+          <div key={index} className="salary-window">
+            <h3 className="salary-name">{`${index + 1}-Іт`}</h3>
+            <p className="salary-coin">{`${salary.toFixed()} грн.`}</p>
+          </div>
+        ))}
+      </div>
       <div className="input-container">
         <input
           type="tel"
@@ -67,7 +99,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="tel"
+          type="text"
           className="input-field"
           placeholder=" "
           value={happySum}
@@ -89,7 +121,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="tel"
+          type="text"
           className="input-field"
           placeholder=" "
           value={smartphones}
@@ -100,7 +132,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="tel"
+          type="text"
           className="input-field"
           placeholder=" "
           value={laptops}
@@ -111,7 +143,7 @@ const App = () => {
 
       <div className="input-container">
         <input
-          type="tel"
+          type="text"
           className="input-field"
           placeholder=" "
           value={tvs}

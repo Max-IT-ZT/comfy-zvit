@@ -49,3 +49,32 @@
   border: 1px solid darkgreen;
   border-radius: 10px;
 }
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 10px;
+}
+.salary-windows {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  gap: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: gainsboro;
+}
+.salary-window {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #c1ffaa;
+}
+.salary-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+.salary-coin {
+  font-size: 12px;
+  font-weight: 800;
+}
