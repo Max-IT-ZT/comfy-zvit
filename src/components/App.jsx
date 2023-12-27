@@ -41,22 +41,15 @@ const App = () => {
     let devicesMessage = '';
     if (isAnyDeviceSpecified) {
       devicesMessage = `
-        Смарт ${smartphonesCount || '0'}
-        Ноут ${laptopsCount || '0'}
-        ТВ ${tvsCount || '0'}`;
+    Смарт ${smartphonesCount || '0'}
+    Ноут ${laptopsCount || '0'}
+    ТВ ${tvsCount || '0'}`;
     }
-
-    const itSalariesMessage = itSalaries
-      .map(
-        (salary, index) => `${index + 1}-ІТ Зарплата: ${salary.toFixed()} грн.`
-      )
-      .join('\n');
-
     return `Житомир
-      ІТ ${itPlan}/${itFact} (${itDeviation.toFixed(1)}%)
-      Часта: ${itShare}%
-      ХС ${happyPlan}/${happyFact} (${happyDeviation.toFixed(1)}%)
-      Частка: ${happyShare}%${devicesMessage}\n${itSalariesMessage}`;
+    ІТ ${itPlan}/${itFact} (${itDeviation.toFixed(1)}%)
+    Часта: ${itShare}%
+    ХС ${happyPlan}/${happyFact} (${happyDeviation.toFixed(1)}%)
+    Частка: ${happyShare}%${devicesMessage}`;
   };
 
   const handleSubmit = () => {
