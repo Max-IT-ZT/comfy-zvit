@@ -20,7 +20,7 @@ const App = () => {
       const itSalariesCalculation = Array(4)
         .fill(0)
         .map((_, index) => {
-          return (itSumValue * (6.2 / 100)) / (index + 1);
+          return (itSumValue * (6.44 / 100)) / (index + 1);
         });
       setItSalaries(itSalariesCalculation);
     }
