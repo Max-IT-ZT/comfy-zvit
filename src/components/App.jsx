@@ -13,6 +13,9 @@ const App = () => {
   const [laptops, setLaptops] = useState('');
   const [tvs, setTvs] = useState('');
   const [itSalaries, setItSalaries] = useState(Array(4).fill(0));
+  const [coefficient, setCoefficient] = useState(() => {
+    return parseFloat(localStorage.getItem('coefficient')) || 6.2;
+  });
 
   useEffect(() => {
     const itSumValue = parseFloat(itSum);
@@ -20,19 +23,27 @@ const App = () => {
       const itSalariesCalculation = Array(4)
         .fill(0)
         .map((_, index) => {
-          return (itSumValue * (6.2 / 100)) / (index + 1);
+          return (itSumValue * (coefficient / 100)) / (index + 1);
         });
       setItSalaries(itSalariesCalculation);
     }
-  }, [itSum]);
+  }, [itSum, coefficient]);
+
+  useEffect(() => {
+    localStorage.setItem('coefficient', coefficient.toString());
+  }, [coefficient]);
+
+  const handleCoefficientChange = e => {
+    setCoefficient(parseFloat(e.target.value) || 0);
+  };
 
   const generateMessage = () => {
     const currentDay = getCurrentDay();
     const itFact = parseInt(itSum, 10);
-    const itPlan = itPlanData[currentDay - 1].plan;
+    const itPlan = itPlanData[currentDay - 1]?.plan || 0;
     const itDeviation = ((itFact - itPlan) / itPlan) * 100;
     const happyFact = parseInt(happySum, 10);
-    const happyPlan = hsPlanData[currentDay - 1].plan;
+    const happyPlan = hsPlanData[currentDay - 1]?.plan || 0;
     const happyDeviation = ((happyFact - happyPlan) / happyPlan) * 100;
     const smartphonesCount = parseInt(smartphones, 10);
     const laptopsCount = parseInt(laptops, 10);
@@ -67,6 +78,18 @@ const App = () => {
             <p className="salary-coin">{`${salary.toFixed()} грн.`}</p>
           </div>
         ))}
+        <div className="input-container cof-int">
+          <input
+            type="number"
+            step="0.01"
+            pattern="\d+(\.\d{1,2})?"
+            className="input-field cof"
+            placeholder=""
+            value={coefficient}
+            onChange={handleCoefficientChange}
+          />
+          <label className="input-label cof-label">Коефіцієнт</label>
+        </div>
       </div>
       <div className="input-container">
         <input
@@ -78,7 +101,6 @@ const App = () => {
         />
         <label className="input-label">Сума за ІТ</label>
       </div>
-
       <div className="input-container">
         <input
           type="text"
@@ -89,7 +111,6 @@ const App = () => {
         />
         <label className="input-label">Доля за ІТ (%)</label>
       </div>
-
       <div className="input-container">
         <input
           type="tel"
@@ -100,7 +121,6 @@ const App = () => {
         />
         <label className="input-label">Сума за Хеппі</label>
       </div>
-
       <div className="input-container">
         <input
           type="text"
@@ -111,7 +131,6 @@ const App = () => {
         />
         <label className="input-label">Доля за Хеппі (%)</label>
       </div>
-
       <div className="input-container">
         <input
           type="tel"
@@ -122,7 +141,6 @@ const App = () => {
         />
         <label className="input-label">Кількість смартфонів</label>
       </div>
-
       <div className="input-container">
         <input
           type="tel"
@@ -133,7 +151,6 @@ const App = () => {
         />
         <label className="input-label">Кількість ноутбуків</label>
       </div>
-
       <div className="input-container">
         <input
           type="tel"
