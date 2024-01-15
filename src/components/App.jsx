@@ -71,6 +71,16 @@ const App = () => {
   return (
     <div className="app-container">
       <div className="logo">Заробітна плата</div>
+      <div className="input-container">
+        <input
+          type="text"
+          className="input-field "
+          placeholder=""
+          value={coefficient + '%'}
+          onChange={handleCoefficientChange}
+        />
+        <label className="input-label">Коефіцієнт</label>
+      </div>
       <div className="salary-windows">
         {itSalaries.map((salary, index) => (
           <div key={index} className="salary-window">
@@ -78,18 +88,6 @@ const App = () => {
             <p className="salary-coin">{`${salary.toFixed()} грн.`}</p>
           </div>
         ))}
-        <div className="input-container cof-int">
-          <input
-            type="number"
-            step="0.01"
-            pattern="\d+(\.\d{1,2})?"
-            className="input-field cof"
-            placeholder=""
-            value={coefficient}
-            onChange={handleCoefficientChange}
-          />
-          <label className="input-label cof-label">Коефіцієнт</label>
-        </div>
       </div>
       <div className="input-container">
         <input
