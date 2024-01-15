@@ -73,10 +73,12 @@ const App = () => {
       <div className="logo">Заробітна плата</div>
       <div className="input-container">
         <input
-          type="text"
+          type="number"
+          step="0.01"
+          pattern="\d+(\.\d{1,2})?"
           className="input-field "
           placeholder=""
-          value={coefficient + '%'}
+          value={coefficient}
           onChange={handleCoefficientChange}
         />
         <label className="input-label">Коефіцієнт</label>
