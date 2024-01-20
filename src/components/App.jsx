@@ -70,9 +70,9 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <div className="btn-teh">
+      <div className="btn-sms">
         <button>
-          <a href="max-it-zt.github.io/comfy-zvit-teh/">
+          <a href="https://max-it-zt.github.io/comfy-zvit-teh/">
             Мій особистий контроль залу!
           </a>
         </button>
