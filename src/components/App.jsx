@@ -70,6 +70,13 @@ const App = () => {
 
   return (
     <div className="app-container">
+      <div className="btn-teh">
+        <button>
+          <a href="max-it-zt.github.io/comfy-zvit-teh/">
+            Мій особистий контроль залу!
+          </a>
+        </button>
+      </div>
       <div className="logo">Заробітна плата</div>
       <div className="input-container">
         <input
