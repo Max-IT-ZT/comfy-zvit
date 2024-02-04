@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/comfy-zvit/static/css/main.a8753255.css",
-    "main.js": "/comfy-zvit/static/js/main.6931b18e.js",
+    "main.css": "/comfy-zvit/static/css/main.c09dc707.css",
+    "main.js": "/comfy-zvit/static/js/main.e5483709.js",
+    "static/media/comfy-logo.png": "/comfy-zvit/static/media/comfy-logo.edd3c9cef229f992b4c6.png",
     "index.html": "/comfy-zvit/index.html",
-    "main.a8753255.css.map": "/comfy-zvit/static/css/main.a8753255.css.map",
-    "main.6931b18e.js.map": "/comfy-zvit/static/js/main.6931b18e.js.map"
+    "main.c09dc707.css.map": "/comfy-zvit/static/css/main.c09dc707.css.map",
+    "main.e5483709.js.map": "/comfy-zvit/static/js/main.e5483709.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8753255.css",
-    "static/js/main.6931b18e.js"
+    "static/css/main.c09dc707.css",
+    "static/js/main.e5483709.js"
   ]
 }
