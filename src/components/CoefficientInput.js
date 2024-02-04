@@ -5,9 +5,9 @@ const CoefficientInput = ({ coefficient, onCoefficientChange }) => {
   return (
     <div className="input-container">
       <input
-        type="tel"
-        // step="0.01"
-        // pattern="\d+(\.\d{1,2})?"
+        type="number"
+        step="0.01"
+        pattern="\d+(\.\d{1,2})?"
         className="input-field "
         placeholder=""
         value={coefficient}
