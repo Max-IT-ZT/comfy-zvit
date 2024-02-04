@@ -5,10 +5,10 @@ const CoefficientInput = ({ coefficient, onCoefficientChange }) => {
   return (
     <div className="input-container">
       <input
-        type="number"
+        type="phone"
         step="0.01"
-        pattern="\d+(\.\d{1,2})?"
-        className="input-field "
+        // pattern="\d+(\.\d{1,2})?"
+        // className="input-field "
         placeholder=""
         value={coefficient}
         onChange={onCoefficientChange}
