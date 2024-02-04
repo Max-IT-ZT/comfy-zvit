@@ -1,7 +1,12 @@
+// App.js
 import React, { useState, useEffect } from 'react';
-import itPlanData from './ItPlanData';
-import hsPlanData from './HsPlanData';
-import getCurrentDay from './Utils';
+import itPlanData from '../data/ItPlanData';
+import hsPlanData from '../data/HsPlanData';
+import getCurrentDay from '../utils/Utils';
+import CoefficientInput from './CoefficientInput';
+import SalariesDisplay from './SalariesDisplay';
+import InputField from './InputField';
+import DevicesInput from './DevicesInput';
 import './App.css';
 
 const App = () => {
@@ -78,97 +83,64 @@ const App = () => {
         </button>
       </div>
       <div className="logo">Заробітна плата</div>
-      <div className="input-container">
-        <input
-          type="number"
-          step="0.01"
-          pattern="\d+(\.\d{1,2})?"
-          className="input-field "
-          placeholder=""
-          value={coefficient}
-          onChange={handleCoefficientChange}
-        />
-        <label className="input-label">Коефіцієнт</label>
-      </div>
-      <div className="salary-windows">
-        {itSalaries.map((salary, index) => (
-          <div key={index} className="salary-window">
-            <h3 className="salary-name">{`${index + 1}-Іт`}</h3>
-            <p className="salary-coin">{`${salary.toFixed()} грн.`}</p>
-          </div>
-        ))}
-      </div>
-      <div className="input-container">
-        <input
-          type="tel"
-          className="input-field"
-          placeholder=" "
-          value={itSum}
-          onChange={e => setItSum(e.target.value)}
-        />
-        <label className="input-label">Сума за ІТ</label>
-      </div>
-      <div className="input-container">
-        <input
-          type="text"
-          className="input-field"
-          placeholder=" "
-          value={itShare}
-          onChange={e => setItShare(e.target.value)}
-        />
-        <label className="input-label">Доля за ІТ (%)</label>
-      </div>
-      <div className="input-container">
-        <input
-          type="tel"
-          className="input-field"
-          placeholder=" "
-          value={happySum}
-          onChange={e => setHappySum(e.target.value)}
-        />
-        <label className="input-label">Сума за Хеппі</label>
-      </div>
-      <div className="input-container">
-        <input
-          type="text"
-          className="input-field"
-          placeholder=" "
-          value={happyShare}
-          onChange={e => setHappyShare(e.target.value)}
-        />
-        <label className="input-label">Доля за Хеппі (%)</label>
-      </div>
-      <div className="input-container">
-        <input
-          type="tel"
-          className="input-field"
-          placeholder=" "
-          value={smartphones}
-          onChange={e => setSmartphones(e.target.value)}
-        />
-        <label className="input-label">Кількість смартфонів</label>
-      </div>
-      <div className="input-container">
-        <input
-          type="tel"
-          className="input-field"
-          placeholder=" "
-          value={laptops}
-          onChange={e => setLaptops(e.target.value)}
-        />
-        <label className="input-label">Кількість ноутбуків</label>
-      </div>
-      <div className="input-container">
-        <input
-          type="tel"
-          className="input-field"
-          placeholder=" "
-          value={tvs}
-          onChange={e => setTvs(e.target.value)}
-        />
-        <label className="input-label">Кількість Телевізорів</label>
-      </div>
 
+      {/* Введення коефіцієнта */}
+      <CoefficientInput
+        coefficient={coefficient}
+        onCoefficientChange={handleCoefficientChange}
+      />
+
+      {/* Відображення зарплат */}
+      <SalariesDisplay itSalaries={itSalaries} />
+
+      {/* Введення сум за ІТ та Хеппі */}
+      <InputField
+        type="tel"
+        placeholder=" "
+        value={itSum}
+        onChange={e => setItSum(e.target.value)}
+        label="Сума за ІТ"
+      />
+      <InputField
+        type="text"
+        placeholder=" "
+        value={itShare}
+        onChange={e => setItShare(e.target.value)}
+        label="Доля за ІТ (%)"
+      />
+      <InputField
+        type="tel"
+        placeholder=" "
+        value={happySum}
+        onChange={e => setHappySum(e.target.value)}
+        label="Сума за Хеппі"
+      />
+      <InputField
+        type="text"
+        placeholder=" "
+        value={happyShare}
+        onChange={e => setHappyShare(e.target.value)}
+        label="Доля за Хеппі (%)"
+      />
+
+      {/* Введення кількості пристроїв */}
+      <DevicesInput
+        value={smartphones}
+        onChange={e => setSmartphones(e.target.value)}
+        label="Кількість смартфонів"
+      />
+      <DevicesInput
+        value={laptops}
+        onChange={e => setLaptops(e.target.value)}
+        label="Кількість ноутбуків"
+      />
+      <DevicesInput
+        value={tvs}
+        onChange={e => setTvs(e.target.value)}
+        label="Кількість Телевізорів"
+      />
+
+      {/* Кнопка відправлення */}
       <button className="button" onClick={handleSubmit}>
         Відправити
       </button>
