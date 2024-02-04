@@ -7,6 +7,8 @@ import CoefficientInput from './CoefficientInput';
 import SalariesDisplay from './SalariesDisplay';
 import InputField from './InputField';
 import DevicesInput from './DevicesInput';
+import Header from './Header';
+
 import './App.css';
 
 const App = () => {
@@ -75,21 +77,17 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <div className="btn-sms">
-        <button>
-          <a href="https://max-it-zt.github.io/comfy-zvit-teh/">
-            Мій особистий контроль залу!
-          </a>
-        </button>
+      <div className="header-container">
+        <Header />
+        {/* Додайте інші компоненти тут */}
       </div>
-      <div className="logo">Заробітна плата</div>
 
       {/* Введення коефіцієнта */}
       <CoefficientInput
         coefficient={coefficient}
         onCoefficientChange={handleCoefficientChange}
       />
-
+      <div className="logo">Заробітна плата</div>
       {/* Відображення зарплат */}
       <SalariesDisplay itSalaries={itSalaries} />
 
