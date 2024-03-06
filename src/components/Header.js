@@ -28,6 +28,9 @@ const Header = () => {
           <span className="bar"></span>
         </div>
         <div className="menu-content">
+          <button onClick={closeMenu}>
+            <a href="https://candid-banoffee-fa60e2.netlify.app">Хелпівник</a>
+          </button>
           <button>
             <a href="https://max-it-zt.github.io/comfy-zvit-teh/">
               Мій контроль залу!
