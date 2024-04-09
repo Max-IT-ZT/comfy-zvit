@@ -29,6 +29,11 @@ const Header = () => {
         </div>
         <div className="menu-content">
           <button onClick={closeMenu}>
+            <a href="https://max-it-zt.github.io/galery-comfy/">
+              Страхові випадки
+            </a>
+          </button>
+          <button onClick={closeMenu}>
             <a href="https://candid-banoffee-fa60e2.netlify.app">Хелпівник</a>
           </button>
           <button>
