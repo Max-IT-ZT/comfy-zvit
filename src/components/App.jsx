@@ -65,7 +65,7 @@ const App = () => {
     }
     return `Житомир
     ІТ ${itPlan}/${itFact} (${itDeviation.toFixed(1)}%)
-    Часта: ${itShare}%
+    Частка: ${itShare}%
     ХС ${happyPlan}/${happyFact} (${happyDeviation.toFixed(1)}%)
     Частка: ${happyShare}%${devicesMessage}`;
   };
